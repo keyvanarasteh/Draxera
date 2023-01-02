@@ -33,6 +33,22 @@ class _HomescreenState extends State<Homescreen> {
 
     return SafeArea(
       child: Scaffold(
+          bottomNavigationBar: BottomNavigationBar(
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.search),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.bus_alert),
+                label: '',
+              )
+            ],
+          ),
           appBar: AppBar(
             title: Center(
               child: CircleAvatar(
@@ -135,14 +151,6 @@ class _HomescreenState extends State<Homescreen> {
               ),
             ),
           )),
-    );
-    bottomNavigationBar:
-    BottomNavigationBar(
-      items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-        ),
-      ],
     );
   }
 }
