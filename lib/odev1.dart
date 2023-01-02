@@ -1,4 +1,4 @@
-// ignore_for_file: unnecessary_const, unused_local_variable, non_constant_identifier_names, prefer_const_constructors, duplicate_ignore, dead_code, unused_label
+// ignore_for_file: unnecessary_const, unused_local_variable, non_constant_identifier_names, prefer_const_constructors, duplicate_ignore, dead_code, unused_label, prefer_typing_uninitialized_variables
 
 import 'dart:js';
 
@@ -12,6 +12,8 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
+  bool ischecked = false;
+
   checkDevice(double width) {
     if (width <= 576) {
       return "mobile";
@@ -31,6 +33,7 @@ class _HomescreenState extends State<Homescreen> {
 
     var DeviceTYpe = checkDevice(scrWidth);
 
+    var ischeckboxed;
     return SafeArea(
       child: DefaultTabController(
         length: 3,
@@ -86,11 +89,18 @@ class _HomescreenState extends State<Homescreen> {
               child: ListView(
                 padding: EdgeInsets.zero,
                 children: [
-                  const DrawerHeader(
-                    decoration: BoxDecoration(
-                      color: Colors.greenAccent,
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Card(
+                      elevation: 20,
+                      color: Colors.black12,
+                      child: const DrawerHeader(
+                        decoration: BoxDecoration(
+                          color: Colors.greenAccent,
+                        ),
+                        child: Image(image: AssetImage("assets/thy.png")),
+                      ),
                     ),
-                    child: Image(image: AssetImage("assets/thy.png")),
                   ),
                   ListTile(
                     title: const Text('planla ve uç'),
@@ -112,6 +122,26 @@ class _HomescreenState extends State<Homescreen> {
                     title: const Text('iletişim'),
                     onTap: () {},
                   ),
+                  Chip(
+                    label: const Text('flutter'),
+                    onDeleted: () {
+                      debugPrint("do someting");
+                    },
+                  ),
+                  Text(
+                    'gidiş dönüş',
+                    style: TextStyle(fontSize: 17.0),
+                  ),
+                  Checkbox(
+                    value: ischeckboxed,
+                    activeColor: Colors.greenAccent,
+                    tristate: true,
+                    onChanged: (newbool) {
+                      setState(() {
+                        ischecked = newbool!;
+                      });
+                    },
+                  )
                 ],
               ),
             ),
