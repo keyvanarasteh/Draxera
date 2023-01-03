@@ -80,7 +80,25 @@ class _HomescreenState extends State<Homescreen> {
                 ),
                 IconButton(
                   icon: const Icon(Icons.login),
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: const Text('login'),
+                          content: const Text(' giriş yapiniz:'),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: const Text('OK'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  },
                 ),
               ],
               backgroundColor: Colors.black,
@@ -128,20 +146,27 @@ class _HomescreenState extends State<Homescreen> {
                       debugPrint("do someting");
                     },
                   ),
-                  Text(
-                    'gidiş dönüş',
-                    style: TextStyle(fontSize: 17.0),
+                  SizedBox(
+                    height: 12,
                   ),
-                  Checkbox(
-                    value: ischeckboxed,
-                    activeColor: Colors.greenAccent,
-                    tristate: true,
-                    onChanged: (newbool) {
-                      setState(() {
-                        ischecked = newbool!;
-                      });
-                    },
-                  )
+                  Row(
+                    children: [
+                      Text(
+                        'gidiş dönüş',
+                        style: TextStyle(fontSize: 17.0),
+                      ),
+                      Checkbox(
+                        value: ischeckboxed,
+                        activeColor: Colors.greenAccent,
+                        tristate: true,
+                        onChanged: (newbool) {
+                          setState(() {
+                            ischecked = newbool!;
+                          });
+                        },
+                      )
+                    ],
+                  ),
                 ],
               ),
             ),
