@@ -20,8 +20,7 @@ class DesktopBody extends StatelessWidget {
                 Tab(
                   icon: Icon(Icons.directions_walk),
                 )
-              ]
-              ),
+              ]),
               title: Center(
                 child: CircleAvatar(
                   radius: 20,
@@ -116,57 +115,26 @@ class DesktopBody extends StatelessWidget {
                 ],
               ),
             ),
-            body: Column(
-              children: [ Tab(
-                  icon: Icon(Icons.directions_car),
-                ),
-                Tab(
-                  icon: Icon(Icons.directions_boat),
-                ),
-                Tab(
-                  icon: Icon(Icons.directions_walk),
-                )
-              ]
-              ), 
-              child: SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 40),
-                  child: Center(
-                    child: Column(
-                      children: <Widget>[
-                        Opacity(
-                          opacity: 0.8,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.all(Radius.circular(18)),
-                            child: Image.network(
-                                'https://images.pexels.com/photos/1266831/pexels-photo-1266831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
-                          ),
+            body: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 40),
+                child: Center(
+                  child: Column(
+                    children: <Widget>[
+                      Opacity(
+                        opacity: 0.8,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.all(Radius.circular(18)),
+                          child: Image.network(
+                              'https://images.pexels.com/photos/1266831/pexels-photo-1266831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
                         ),
-                        IntrinsicHeight(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: <Widget>[
-                              Expanded(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(20.0),
-                                  child: Container(
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      children: <Widget>[
-                                        ClipRRect(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(18)),
-                                          child: Image.network(
-                                              'https://images.pexels.com/photos/417344/pexels-photo-417344.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Expanded(
-                                  child: Padding(
+                      ),
+                      IntrinsicHeight(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            Expanded(
+                              child: Padding(
                                 padding: const EdgeInsets.all(20.0),
                                 child: Container(
                                   child: Column(
@@ -174,20 +142,38 @@ class DesktopBody extends StatelessWidget {
                                         MainAxisAlignment.spaceEvenly,
                                     children: <Widget>[
                                       ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.all(Radius.circular(18)),
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(18)),
                                         child: Image.network(
-                                            'https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+                                            'https://images.pexels.com/photos/417344/pexels-photo-417344.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
                                       )
                                     ],
                                   ),
                                 ),
-                              ))
-                            ],
-                          ),
+                              ),
+                            ),
+                            Expanded(
+                                child: Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Container(
+                                child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: <Widget>[
+                                    ClipRRect(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(18)),
+                                      child: Image.network(
+                                          'https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ))
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),

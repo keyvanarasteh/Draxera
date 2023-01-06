@@ -28,17 +28,6 @@ class MobileBody extends StatelessWidget {
               ],
             ),
             appBar: AppBar(
-              bottom: const TabBar(tabs: [
-                Tab(
-                  icon: Icon(Icons.directions_car),
-                ),
-                Tab(
-                  icon: Icon(Icons.directions_boat),
-                ),
-                Tab(
-                  icon: Icon(Icons.directions_walk),
-                )
-              ]),
               title: Center(
                 child: CircleAvatar(
                   radius: 20,
