@@ -10,6 +10,8 @@ class Homescreen extends StatefulWidget {
   State<Homescreen> createState() => _HomescreenState();
 }
 
+double _currentSliderValue = 20;
+
 class _HomescreenState extends State<Homescreen> {
   @override
   Widget build(BuildContext context) {

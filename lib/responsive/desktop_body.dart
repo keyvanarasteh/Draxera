@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 
 class DesktopBody extends StatelessWidget {
@@ -21,7 +23,7 @@ class DesktopBody extends StatelessWidget {
                   icon: Icon(Icons.directions_walk),
                 )
               ]),
-              title: Center(
+              title: const Center(
                 child: CircleAvatar(
                   radius: 20,
                   backgroundImage: AssetImage("assets/thy.png"),
@@ -62,12 +64,12 @@ class DesktopBody extends StatelessWidget {
               child: ListView(
                 padding: EdgeInsets.zero,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
+                  const Padding(
+                    padding: EdgeInsets.all(10.0),
                     child: Card(
                       elevation: 20,
                       color: Colors.black12,
-                      child: const DrawerHeader(
+                      child: DrawerHeader(
                         decoration: BoxDecoration(
                           color: Colors.greenAccent,
                         ),
@@ -101,17 +103,23 @@ class DesktopBody extends StatelessWidget {
                       debugPrint("do someting");
                     },
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                   Row(
                     children: [
-                      Text(
+                      const Text(
                         'gidiş dönüş',
                         style: TextStyle(fontSize: 17.0),
                       ),
                     ],
                   ),
+                  Column(
+                    children: [
+                      const Text('memnuniyetiniz'),
+                      Slider(value: 1, onChanged: (value) {})
+                    ],
+                  )
                 ],
               ),
             ),
@@ -124,7 +132,8 @@ class DesktopBody extends StatelessWidget {
                       Opacity(
                         opacity: 0.8,
                         child: ClipRRect(
-                          borderRadius: BorderRadius.all(Radius.circular(18)),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(18)),
                           child: Image.network(
                               'https://images.pexels.com/photos/1266831/pexels-photo-1266831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
                         ),
@@ -142,7 +151,7 @@ class DesktopBody extends StatelessWidget {
                                         MainAxisAlignment.spaceEvenly,
                                     children: <Widget>[
                                       ClipRRect(
-                                        borderRadius: BorderRadius.all(
+                                        borderRadius: const BorderRadius.all(
                                             Radius.circular(18)),
                                         child: Image.network(
                                             'https://images.pexels.com/photos/417344/pexels-photo-417344.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
@@ -161,8 +170,8 @@ class DesktopBody extends StatelessWidget {
                                       MainAxisAlignment.spaceEvenly,
                                   children: <Widget>[
                                     ClipRRect(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(18)),
+                                      borderRadius: const BorderRadius.all(
+                                          Radius.circular(18)),
                                       child: Image.network(
                                           'https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
                                     )
